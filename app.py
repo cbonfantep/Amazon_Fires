@@ -33,7 +33,7 @@ def index():
     return render_template("index.html")
 
 @app.route("/comparison")
-def index():
+def comparison():
     """Return the homepage."""
     return render_template("comparison.html")
 

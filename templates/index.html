@@ -47,8 +47,13 @@ td{
    padding-left: 10px;
   padding-right: 10px;
 }
+
 body {
-  background-color: #f5f5f5;
+  background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mata-atlantica-atlantic-forest-in-brazil-royalty-free-image-935746242-1567619461.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
 
@@ -58,11 +63,11 @@ body {
   <body>
 
     <!-- Start of navbar -->
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container-fluid navbar-custom">
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="row">
+        <!  Brand and toggle get grouped for better mobile display -->
+        <!-- <div class="row">
           <div class="navbar-header">
             <div class="col-xs-9 phone-nav">
               <a class="navbar-brand" href="comparison.html" id="logo">Sources</a>
@@ -71,49 +76,87 @@ body {
           </div>
           </div>
         </div>
+      </nav> -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+        <div class="container">
+          <a class="navbar-brand" href="#">Amazon Fires in Brazil</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="comparison.html">YoY Comparison</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="comparison.html">Data Sources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">How you can Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
+
+
     <!-- End of navbar -->
 
 
 
 <!-- HERO UNIT -->
-</br>
+<!-- </br>
 </br>
   <div class="jumbotron" style="background-color: #162A55;">
     <div class="container" align="center">
       <h1 class="display-4" style="color: #F1F1F1">Amazon Fires in Brazil</h1>
     </div>
-  </div>
+  </div> -->
 
 <!-- END HERO UNIT -->
 
-<!-- START PAGE LEFT -->
-  <div class="container-fluid">
-   <section class="row justify-content-between">
-        <div class="col-md-8">
-            <div id="map"></div>
-             <p class="legend">Source: Nasa M6</p>
-  </br>
- </br>
-
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-
-
-
- <!-- CODE PAGE RIGHT - Text  -->
-
-        <div class="col-md-4 left">
-            <h5>Problem Statement:</h5>
-        <p id="text_right">
+<!-- ADDING THE FIXED WHITE BACKGROUD -->
+<div class="container">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="card-body p-5">
+    <h1 class="font-weight-light">Amazon fires: Cutting through the media noise</h1>
+<br>
+        <h5>Problem Statement:</h5>
+    <p class="lead">
 
 There has been an explosion of international media attention regarding a supposed relative spike in the number of forest fires experienced during the months of July and August 2019 in the Brazilian Amazon.
 
 We propose, in our team project “Brazilian Fires in the Amazon” to search for and analyze reliable, available public data regarding Brazilian forest fires in the Amazon, in order to substantiate or refute the above-referenced premise.
 
 In other words: Does environmental data show clear evidence that the frequency of fires within the Brazilian Amazon forests has dramatically increased over the past several years, relative to the fire frequency over the last decade?
+</p>
+<br>
+<p class="lead">Camila, Gigi & Chloe</p>
 
-Camila, Gigi & Chloe</p>
+  </br>
+ </br>
+<!-- START PAGE LEFT -->
+  <div class="container-fluid">
+   <section class="row justify-content-between">
+        <div class="col-md-12 shadow p-3 mb-5 bg-white rounded">
+          <h4>Amazon fire Map: 2014 - 2019</h4>
+            <div id="map"></div>
+             <p class="legend">Source: Nasa MODIS</p>
+  </br>
+ </br>
+<div style="height: 500px"></div>
+  </div>
+
+
+
+ <!-- CODE PAGE RIGHT - Text  -->
+
         </div>
         </div>
         </br>
@@ -121,11 +164,11 @@ Camila, Gigi & Chloe</p>
      <br>
      <div class="container-fluid">
        <section class="row justify">
-           <div class="col-md-8">
+           <div class="col-md-10">
 
 
      <h5>Fires in the Amazon: 2014-2019*</h5>
-     <table border="1" class="table-striped">
+     <table border="1" class="table-hover table-striped">
        <thead>
          <tr style="text-align: center;">
            <th>YEAR</th>
@@ -152,11 +195,11 @@ Camila, Gigi & Chloe</p>
            <td>1,929</td>
            <td>2,024</td>
            <td>2,931</td>
-           <td>62,12</td>
+           <td>6,212</td>
            <td>10,529</td>
-           <td>40,845</td>
-           <td>42,049</td>
-           <td>36,572</td>
+           <td style="background-color: LemonChiffon">40,845</td>
+           <td style="background-color: LemonChiffon">42,049</td>
+           <td style="background-color: LemonChiffon">36,572</td>
            <td>17,667</td>
            <td>10,723</td>
            <td>175,900</td>
@@ -170,9 +213,9 @@ Camila, Gigi & Chloe</p>
            <td>2,169</td>
            <td>5,569</td>
            <td>8,541</td>
-           <td>37,883</td>
-           <td>61,739</td>
-           <td>46,741</td>
+           <td style="background-color: LemonChiffon">37,883</td>
+           <td style="background-color: LemonChiffon">61,739</td>
+           <td style="background-color: LemonChiffon">46,741</td>
            <td>26,411</td>
            <td>17,703</td>
            <td>216,782</td>
@@ -186,9 +229,9 @@ Camila, Gigi & Chloe</p>
            <td>3,287</td>
            <td>6,185</td>
            <td>19,242</td>
-           <td>39,088</td>
-           <td>42,209</td>
-           <td>30,809</td>
+           <td style="background-color: LemonChiffon">39,088</td>
+           <td style="background-color: LemonChiffon">42,209</td>
+           <td style="background-color: LemonChiffon">30,809</td>
            <td>19,160</td>
            <td>8,207</td>
            <td>184,218</td>
@@ -202,9 +245,9 @@ Camila, Gigi & Chloe</p>
            <td>2,571</td>
            <td>5,384</td>
            <td>17,568</td>
-           <td>37,380</td>
-           <td>72,895</td>
-           <td>33,607</td>
+           <td style="background-color: LemonChiffon">37,380</td>
+           <td style="background-color: tomato">72,895</td>
+           <td style="background-color: LemonChiffon">33,607</td>
            <td>19,334</td>
            <td>11,655</td>
            <td>207,511</td>
@@ -219,7 +262,7 @@ Camila, Gigi & Chloe</p>
            <td>5,790</td>
            <td>12,652</td>
            <td>22,774</td>
-           <td>42,251</td>
+           <td style="background-color: LemonChiffon">42,251</td>
            <td>19,568</td>
            <td>13,014</td>
            <td>5,113</td>
@@ -234,12 +277,12 @@ Camila, Gigi & Chloe</p>
            <td>2,963</td>
            <td>7,258</td>
            <td>13,394</td>
-           <td>51,936</td>
+           <td style="background-color: tomato">51,936</td>
            <td>38,639*</td>
            <td>-</td>
            <td>-</td>
            <td>-</td>
-           <td>129,140</td>
+           <td>129,140*</td>
          </tr>
        </tbody>
      </table>
@@ -247,8 +290,7 @@ Camila, Gigi & Chloe</p>
    </div>
 
  <img src="https://live.staticflickr.com/65535/48763063828_f0ab4d1bc6_z.jpg" width="450" height="300" alt="Jan-Aug_fires">
- </div>
-  </div>
+
 <br>
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/184529837@N05/48763063808/in/dateposted-public/" title="Amazon_Fires_video"><img src="https://live.staticflickr.com/31337/48763063808_513466d662_z.jpg" width="640" height="360" alt="Amazon_Fires_video"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
@@ -256,7 +298,14 @@ Camila, Gigi & Chloe</p>
 
 <img src="https://live.staticflickr.com/65535/48763384726_4bc6b2fd5f_z.jpg" width="450" height="350" alt="Aug_fires">
 
-<img src="https://live.staticflickr.com/65535/48763573772_6fc8c7e19c_b.jpg" alt="Yearly_fires">
+<!-- <img src="https://live.staticflickr.com/65535/48763573772_6fc8c7e19c_b.jpg" alt="Yearly_fires"> -->
+</div>
+ </div>
+</div>
+ </div>
+  </div>
+
+
 
 
 

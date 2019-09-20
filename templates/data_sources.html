@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Amazon Fires</title>
+<!-- BOOTSTRAP CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" type='text/css'>
+
+  <!-- ADDITIONAL CSS-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="./static/css/style.css" />
+
+  <style>
+#border {
+  padding-top: 20px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #F1F1F1;
+}
+.legend {
+  font-size: 10px;
+}
+#img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#text_right{
+    font-size: 14px;
+}
+th{
+   font-size: 14px;
+}
+td{
+   font-size: 12px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+  padding-right: 10px;
+}
+
+body {
+  background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mata-atlantica-atlantic-forest-in-brazil-royalty-free-image-935746242-1567619461.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
+</style>
+  </head>
+  <!-- END CSS-->
+  <body>
+
+    <!-- Start of navbar -->
+    <!-- <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!  Brand and toggle get grouped for better mobile display -->
+        <!-- <div class="row">
+          <div class="navbar-header">
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="comparison.html" id="logo">Sources</a>
+              <a class="navbar-brand" href="#" id="logo">XXX</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </nav> -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+        <div class="container">
+          <a class="navbar-brand" href="#">Amazon Fires in Brazil</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="comparison.html">YoY Comparison</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="comparison.html">Data Sources
+                <span class="sr-only">(current)</span>
+              </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">How you can Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <!-- End of navbar -->
+
+
+
+<!-- HERO UNIT -->
+<!-- </br>
+</br>
+  <div class="jumbotron" style="background-color: #162A55;">
+    <div class="container" align="center">
+      <h1 class="display-4" style="color: #F1F1F1">Amazon Fires in Brazil</h1>
+    </div>
+  </div> -->
+
+<!-- END HERO UNIT -->
+
+<!-- ADDING THE FIXED WHITE BACKGROUD -->
+<div class="container">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="card-body p-5">
+    <h1 class="font-weight-light">Amazon fires: Cutting through the media noise</h1>
+<br>
+        <h3>Data sources:</h3>
+
+          <h5>NASA</h5>
+    <p>
+
+      NASA provides insights into fires and thermal anomalies occurring daily around the world. <br>
+      ● Satellite derived fire data and imagery available in Worldview are from the MODIS instrument on board the Terra and Aqua satellites and the VIIRS instrument on board the joint NASA/NOAA Suomi-NPP satellite. <br>
+      ● Terra passes over the equator at approximately 10K30am (Day) and 10K30pm (Night) local time and Aqua and Suomi-NPP passes over the equator at approximately 1K30pm (Day) and 1K30am (Night) local time. <br>
+      ● The fire information are available within Worldview approximately 3 hours after satellite overpass. <br>
+ <br>
+  <br>
+<h5>Satellite Data Collection and Data Rendering Details</h5> <br>
+
+* MODIS=Moderate Resolution Imaging Spectroradiometer <br>
+* MODIS Data collected by the satellites utilize an algorithm that exploits the strong emission of mid-infrared radiation from fires and thermal anomalies.<br>
+* For the MODIS instrument the point represents the center of a 1km pixel. <br>
+* The fires and thermal anomalies are shown as red points on the NASA visualization imagery on the NASA FIRMS website.  <br>
+* We downloaded satellite fire detection data for the Brazilian Amazon into csv files grouped by year. <br>
+* For our project visualization, we utilized code our team assembled to construct a heat map illustrating varying degrees of temperature, within a pre-selected geographical range determined by us. <br>
+</p>
+<a class="link" href="https://firms.modaps.eosdis.nasa.gov/download/">Nasa FIRMS - Fire Information for Resources Management System</a>
+<br>
+
+<h3>Brazil </h3>
+<p class="lead">
+
+NASA provides insights into fires and thermal anomalies occurring daily around the world.
+● Satellite derived fire data and imagery available in Worldview are from the MODIS instrument on board the Terra and Aqua satellites and the VIIRS instrument on board the joint NASA/NOAA Suomi-NPP satellite.
+● Terra passes over the equator at approximately 10K30am (Day) and 10K30pm (Night) local time and Aqua and Suomi-NPP passes over the equator at approximately 1K30pm (Day) and 1K30am (Night) local time.
+*The fire information are available within Worldview approximately 3 hours after satellite overpass.
+</p>
+<a class="link" href="https://firms.modaps.eosdis.nasa.gov/download/">Nasa FIRMS - Fire Information for Resources Management System</a>
+<br>
+
+
+<!-- <img src="https://live.staticflickr.com/65535/48763573772_6fc8c7e19c_b.jpg" alt="Yearly_fires"> -->
+</div>
+ </div>
+</div>
+ </div>
+  </div>
+
+
+
+
+
+    <!-- API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+
+    <!-- Leaflet heatmap plugin-->
+    <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+
+
+  </body>
+
+</html>

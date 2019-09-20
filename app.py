@@ -32,6 +32,12 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/comparison")
+def index():
+    """Return the homepage."""
+    return render_template("comparison.html")
+
+
 
 @app.route("/cleanup_db")
 def cleanup_db():

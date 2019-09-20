@@ -38,6 +38,16 @@ def comparison():
     return render_template("comparison.html")
 
 
+@app.route("/data_sources")
+def sources():
+    """Return the homepage."""
+    return render_template("data_sources.html")
+
+@app.route("/how_to_help")
+def help():
+    """Return the homepage."""
+    return render_template("how_to_help.html")
+
 
 @app.route("/cleanup_db")
 def cleanup_db():

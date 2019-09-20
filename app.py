@@ -56,7 +56,7 @@ def cleanup_db():
     mongo.db.clean_fires.insert(clean_locations)
 
 
-@app.route("/amazon_fire_data/")
+@app.route("/amazon_fire_data/2014")
 def amazon_fire_data():
     # TODO make sure that "fires" is the name of the collection (or rename it) - done
     # mongo.db.clean_fires.acq_date.find({"$expr": {"$eq": [{"$year": "$"}]}})
@@ -84,6 +84,118 @@ def amazon_fire_data():
     # #      (see "heatArray.push([location.latitude, location.longitude]);" inside app.js for more details)
     # # location.latitude, location.longitude
     #
+
+@app.route("/amazon_fire_data/2015")
+def amazon_fire_data_2015():
+    # TODO make sure that "fires" is the name of the collection (or rename it) - done
+    # mongo.db.clean_fires.acq_date.find({"$expr": {"$eq": [{"$year": "$"}]}})
+    year = 2015
+    locations_2015 = mongo.db.clean_fires.find({'acq_date': { '$gte': datetime(year, 1, 1),
+                                            '$lte': datetime(year + 1, 1, 1)}}, {'_id': False})
+    # locations = mongo.db.clean_fires.find{acq_date: {$eq: 2014, $lt: end}, {'_id': False}}
+
+    # print(JSONEncoder().encode(locations[1]))
+    # loc1=JSONEncoder().encode(locations)
+
+    # loc1=list(locations)
+    print(locations_2015[0])
+    locations_2015 = list(locations_2015)
+    result = []
+    for location in locations_2015:
+        acq_date = location['acq_date']
+        if acq_date.year == 2015:
+            result.append(location)
+    return jsonify(result)
+
+
+@app.route("/amazon_fire_data/2016")
+def amazon_fire_data_2016():
+    # TODO make sure that "fires" is the name of the collection (or rename it) - done
+    # mongo.db.clean_fires.acq_date.find({"$expr": {"$eq": [{"$year": "$"}]}})
+    year = 2016
+    locations_2016 = mongo.db.clean_fires.find({'acq_date': { '$gte': datetime(year, 1, 1),
+                                            '$lte': datetime(year + 1, 1, 1)}}, {'_id': False})
+    # locations = mongo.db.clean_fires.find{acq_date: {$eq: 2014, $lt: end}, {'_id': False}}
+
+    # print(JSONEncoder().encode(locations[1]))
+    # loc1=JSONEncoder().encode(locations)
+
+    # loc1=list(locations)
+    print(locations_2016[0])
+    locations_2016 = list(locations_2016)
+    result = []
+    for location in locations_2016:
+        acq_date = location['acq_date']
+        if acq_date.year == 2016:
+            result.append(location)
+    return jsonify(result)
+
+@app.route("/amazon_fire_data/2017")
+def amazon_fire_data_2017():
+    # TODO make sure that "fires" is the name of the collection (or rename it) - done
+    # mongo.db.clean_fires.acq_date.find({"$expr": {"$eq": [{"$year": "$"}]}})
+    year = 2017
+    locations_2017 = mongo.db.clean_fires.find({'acq_date': { '$gte': datetime(year, 1, 1),
+                                            '$lte': datetime(year + 1, 1, 1)}}, {'_id': False})
+    # locations = mongo.db.clean_fires.find{acq_date: {$eq: 2014, $lt: end}, {'_id': False}}
+
+    # print(JSONEncoder().encode(locations[1]))
+    # loc1=JSONEncoder().encode(locations)
+
+    # loc1=list(locations)
+    print(locations_2017[0])
+    locations_2017 = list(locations_2017)
+    result = []
+    for location in locations_2017:
+        acq_date = location['acq_date']
+        if acq_date.year == 2017:
+            result.append(location)
+    return jsonify(result)
+
+@app.route("/amazon_fire_data/2018")
+def amazon_fire_data_2018():
+    # TODO make sure that "fires" is the name of the collection (or rename it) - done
+    # mongo.db.clean_fires.acq_date.find({"$expr": {"$eq": [{"$year": "$"}]}})
+    year = 2018
+    locations_2018 = mongo.db.clean_fires.find({'acq_date': { '$gte': datetime(year, 1, 1),
+                                            '$lte': datetime(year + 1, 1, 1)}}, {'_id': False})
+    # locations = mongo.db.clean_fires.find{acq_date: {$eq: 2014, $lt: end}, {'_id': False}}
+
+    # print(JSONEncoder().encode(locations[1]))
+    # loc1=JSONEncoder().encode(locations)
+
+    # loc1=list(locations)
+    print(locations_2018[0])
+    locations_2018 = list(locations_2018)
+    result = []
+    for location in locations_2018:
+        acq_date = location['acq_date']
+        if acq_date.year == 2018:
+            result.append(location)
+    return jsonify(result)
+
+@app.route("/amazon_fire_data/2019")
+def amazon_fire_data_2019():
+    # TODO make sure that "fires" is the name of the collection (or rename it) - done
+    # mongo.db.clean_fires.acq_date.find({"$expr": {"$eq": [{"$year": "$"}]}})
+    year = 2019
+    locations_2019 = mongo.db.clean_fires.find({'acq_date': { '$gte': datetime(year, 1, 1),
+                                            '$lte': datetime(year + 1, 1, 1)}}, {'_id': False})
+    # locations = mongo.db.clean_fires.find{acq_date: {$eq: 2014, $lt: end}, {'_id': False}}
+
+    # print(JSONEncoder().encode(locations[1]))
+    # loc1=JSONEncoder().encode(locations)
+
+    # loc1=list(locations)
+    print(locations_2019[0])
+    locations_2019 = list(locations_2019)
+    result = []
+    for location in locations_2019:
+        acq_date = location['acq_date']
+        if acq_date.year == 2019:
+            result.append(location)
+    return jsonify(result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

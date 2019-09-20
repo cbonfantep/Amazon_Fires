@@ -177,10 +177,14 @@ d3.json(url_19, function(response) {
 var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2JvbmZhbnRlIiwiYSI6ImNrMDdnYXdhYjAyeHkzYnF6aTZwbnQ4eW0ifQ.b-Ccw3li5aClOfHRniN9DA';
+    mbUrl = "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
 
-var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
-    streets  = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+var grayscale   = L.tileLayer(mbUrl, {
+  id: 'mapbox.light',
+   attribution: mbAttr,
+   accessToken: API_KEY
+}),
+    streets  = L.tileLayer(mbUrl, {
       attribution: mbAttr,
       maxZoom: 18,
       id: "mapbox.streets",
@@ -189,8 +193,8 @@ var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
 
     var map = L.map('map', {
         center: [-3.10719, -60.0261],
-        zoom: 5,
-        layers: [grayscale, year_2014]
+        zoom: 4,
+        layers: [streets, year_2019]
     });
 
 var baseLayers = {

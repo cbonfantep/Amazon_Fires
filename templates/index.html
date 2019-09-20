@@ -14,7 +14,7 @@
 
   <!-- ADDITIONAL CSS-->
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <link rel="stylesheet" href="./static/css/style.css" />
@@ -25,6 +25,9 @@
   border-style: solid;
   border-width: 3px;
   border-color: #F1F1F1;
+}
+.legend {
+  font-size: 10px;
 }
 #img {
   display: block;
@@ -39,12 +42,40 @@ th{
 }
 td{
    font-size: 12px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+  padding-right: 10px;
 }
+body {
+  background-color: #f5f5f5;
+}
+
 
 </style>
   </head>
   <!-- END CSS-->
   <body>
+
+    <!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="/comparison.html" id="logo">Yearly Comparison</a>
+              <a class="navbar-brand" href="#" id="logo">XXX</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </nav>
+    <!-- End of navbar -->
+
+
+
 <!-- HERO UNIT -->
 </br>
 </br>
@@ -61,16 +92,19 @@ td{
    <section class="row justify-content-between">
         <div class="col-md-8">
             <div id="map"></div>
+             <p class="legend">Source: Nasa M6</p>
   </br>
  </br>
+
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </div>
+
 
 
  <!-- CODE PAGE RIGHT - Text  -->
 
         <div class="col-md-4 left">
-            <h5>Problem Statement for Brazil Fires:</h5>
+            <h5>Problem Statement:</h5>
         <p id="text_right">
 
 There has been an explosion of international media attention regarding a supposed relative spike in the number of forest fires experienced during the months of July and August 2019 in the Brazilian Amazon.
@@ -81,11 +115,14 @@ In other words: Does environmental data show clear evidence that the frequency o
 
 Camila, Gigi & Chloe</p>
         </div>
+        </div>
         </br>
 <br>
      <br>
      <div class="container-fluid">
+       <section class="row justify">
            <div class="col-md-8">
+
 
      <h5>Fires in the Amazon: 2014-2019*</h5>
      <table border="1" class="table-striped">
@@ -198,7 +235,7 @@ Camila, Gigi & Chloe</p>
            <td>7,258</td>
            <td>13,394</td>
            <td>51,936</td>
-           <td>38,639</td>
+           <td>38,639*</td>
            <td>-</td>
            <td>-</td>
            <td>-</td>
@@ -206,11 +243,22 @@ Camila, Gigi & Chloe</p>
          </tr>
        </tbody>
      </table>
+     <p class="legend"> *2019 data until Sept 15. Source: http://queimadas.dgi.inpe.br/</p>
    </div>
+
+ <img src="https://live.staticflickr.com/65535/48763063828_f0ab4d1bc6_z.jpg" width="450" height="300" alt="Jan-Aug_fires">
  </div>
+  </div>
 <br>
 
-<img src="/YOY_screenshot.png">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/184529837@N05/48763063808/in/dateposted-public/" title="Amazon_Fires_video"><img src="https://live.staticflickr.com/31337/48763063808_513466d662_z.jpg" width="640" height="360" alt="Amazon_Fires_video"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+
+<img src="https://live.staticflickr.com/65535/48763384726_4bc6b2fd5f_z.jpg" width="450" height="350" alt="Aug_fires">
+
+<img src="https://live.staticflickr.com/65535/48763573772_6fc8c7e19c_b.jpg" alt="Yearly_fires">
+
+
 
     <!-- API key -->
     <script type="text/javascript" src="static/js/config.js"></script>

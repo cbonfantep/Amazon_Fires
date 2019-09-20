@@ -1,6 +1,6 @@
 var myMap = L.map("map", {
-  center: [37.7749, -122.4194],
-  zoom: 13
+  center: [3.10719, -60.0261],
+  zoom: 5
 });
 
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -10,7 +10,9 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+var url = "/amazon_fire_data";
+var year = d3.select();
+var queryUrl = url + "/" + year;
 
 d3.json(url, function(response) {
 
@@ -19,10 +21,10 @@ d3.json(url, function(response) {
   var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+    var location = response[i];
 
     if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
+      heatArray.push([location.latitude, location.longitude]);
     }
   }
 
@@ -32,3 +34,4 @@ d3.json(url, function(response) {
   }).addTo(myMap);
 
 });
+
